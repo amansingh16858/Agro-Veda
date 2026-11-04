@@ -1,8 +1,8 @@
 import { SoilTelemetry } from '../types';
 
-let simulatedSoilMoisture = 28.5;
-let simulatedTemperature = 31.4;
-let simulatedHumidity = 66.0;
+let simulatedSoilMoisture = 48.0;
+let simulatedTemperature = 26.0;
+let simulatedHumidity = 62.0;
 
 let lastDeliveredMoisture = 18.0;
 
