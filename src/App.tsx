@@ -457,7 +457,7 @@ export function App() {
                 </span>
               </div>
               <span className="text-[11px] font-mono text-slate-400 dark:text-neutral-500 font-medium">
-                {isProbeConnected ? 'Live ESP32 Stream' : isSampleActive ? 'Field Sample Preset' : `${telemetry.moisturePercent}% Manual Reading`}
+                {isSampleActive ? 'Field Sample Preset' : `Java Telemetry · ${telemetry.moisturePercent}% Moisture`}
               </span>
             </div>
 
@@ -475,18 +475,14 @@ export function App() {
               onResetTempOverride={handleResetTempOverride}
               onResetHumidityOverride={handleResetHumidityOverride}
               isDhtLive={Boolean(telemetry.isDhtLive)}
-              isProbeConnected={isProbeConnected}
+              isProbeConnected={true}
               esp32Ip={esp32Ip}
               onEsp32IpChange={setEsp32Ip}
               onRefreshTelemetry={async () => {
-                if (!esp32Ip) {
-                  addLog('Please enter the ESP32 Soil Probe IP address first.', 'ESP32', 'warning');
-                  return;
-                }
-                addLog(`Syncing soil data from http://${esp32Ip}/telemetry...`, 'ESP32', 'info');
-                const live = await fetchESP32Telemetry(esp32Ip);
+                addLog('Syncing telemetry from Java Spring Boot engine...', 'System', 'info');
+                const live = await fetchESP32Telemetry();
                 setTelemetry(live);
-                addLog(`Soil readings updated: ${live.moisturePercent}% moisture.`, 'ESP32', 'success');
+                addLog(`Java soil readings synchronized: ${live.moisturePercent}% moisture.`, 'System', 'success');
               }}
             />
 
@@ -511,7 +507,7 @@ export function App() {
               <span className={`w-2 h-2 rounded-full flex-shrink-0 ${isProbeConnected ? 'bg-emerald-500 animate-pulse' : telemetry.moisturePercent < 30 ? 'bg-amber-500' : telemetry.moisturePercent > 70 ? 'bg-blue-500' : 'bg-emerald-500'}`} />
               <div className="flex flex-col min-w-0">
                 <span className="text-[9.5px] sm:text-[10px] uppercase font-bold tracking-wider font-mono text-slate-400 dark:text-neutral-400 truncate">
-                  {isProbeConnected ? 'Live Soil Probe' : 'Soil Sensor'}
+                  Soil Telemetry (Java)
                 </span>
                 <span className="text-xs font-bold font-sans truncate">
                   {telemetry.moisturePercent}% ({telemetry.moisturePercent < 30 ? 'Dry' : telemetry.moisturePercent > 70 ? 'Wet' : 'Good'})
@@ -663,8 +659,8 @@ export function App() {
                 ? 'bg-emerald-50/80 dark:bg-emerald-950/30 border-emerald-300 dark:border-emerald-500/40 text-emerald-900 dark:text-emerald-200' 
                 : 'bg-slate-50 dark:bg-[#1B1D22] border-slate-200 dark:border-white/10 text-slate-800 dark:text-neutral-200'
             }`}>
-              <span className={`w-2 h-2 rounded-full ${isProbeConnected ? 'bg-emerald-500 animate-pulse' : telemetry.moisturePercent < 30 ? 'bg-amber-500' : telemetry.moisturePercent > 70 ? 'bg-blue-500' : 'bg-emerald-500'}`} />
-              <span>{isProbeConnected ? 'Live Soil' : 'Soil'}: {telemetry.moisturePercent}% ({telemetry.moisturePercent < 30 ? 'Dry' : telemetry.moisturePercent > 70 ? 'Wet' : 'Good'})</span>
+              <span className={`w-2 h-2 rounded-full ${telemetry.moisturePercent < 30 ? 'bg-amber-500' : telemetry.moisturePercent > 70 ? 'bg-blue-500' : 'bg-emerald-500'}`} />
+              <span>Soil (Java): {telemetry.moisturePercent}% ({telemetry.moisturePercent < 30 ? 'Dry' : telemetry.moisturePercent > 70 ? 'Wet' : 'Good'})</span>
             </div>
 
             {/* 2. Microclimate */}

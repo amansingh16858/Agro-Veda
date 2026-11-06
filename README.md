@@ -1,46 +1,44 @@
-﻿# 🌾 AgroPulse AI — Smart Fertilizer & Crop Diagnostic System
+# 🌾 AgroVeda AI — Smart Fertilizer & Crop Diagnostic System
+### *Modern Java 21 Backend + React 19 Precision Agronomy Engine*
 
-> **AI-Powered Dual-Engine Precision Agriculture**: Fusing real-time soil telemetry with high-resolution computer vision to prescribe exact chemical (NPK) and organic fertilizer remedies.
-
----
-
-## 🌟 Core Architecture: The 50/50 Dual-Engine
-
-Unlike traditional crop apps that only inspect leaf photos or simple soil sensors that only read moisture, **AgroPulse AI** bridges the physical and visual divide:
-
-1. **Input 1: Optical Leaf Scanner** (Gemini 1.5 Flash Vision)
-   - Detects cellular chlorosis, blight spots, necrotic margins, and pest damage.
-   - Built-in low-light hardware boost (+22% Brightness) for crisp indoor captures.
-2. **Input 2: Physical Soil Telemetry** (Capacitive Agri-Probe)
-   - Real-time soil moisture percentage streamed live over WiFi from an ESP32 edge microcontroller.
-   - 3-State Honest Status: Live ESP32 Sensor, Verified Sample Field Data, or Calibrated Manual Slider.
-3. **Agronomic Reasoning Engine** (DeepSeek V4 Flash)
-   - Calculates custom N-P-K ratios, watering schedules, and organic compost recipes written in 4th-grade plain English.
+> **Precision Agriculture Dual-Engine**: Fusing agronomic soil telemetry with high-resolution computer vision to prescribe exact chemical (NPK) and organic fertilizer remedies.
 
 ---
 
-## 🛠️ Hardware Specification (~₹910 / .00 BOM)
+## 🌟 Architecture: Pure Java 21 Backend + Modern React Frontend
 
-- **ESP32-CAM + MB Shield**: Edge microcontroller with OV2640 camera & WiFi.
-- **Capacitive Soil Moisture Sensor v1.2**: Corrosion-resistant analog soil telemetry.
-- **DHT11 Micro-Sensor**: Ambient humidity and temperature monitoring.
+- **Backend**: **100% Java 21 (Spring Boot 3.3.5)** running on `http://localhost:8080`
+  - `SoilSimulationService.java`: Realistic agronomic soil dynamics (moisture, temperature, humidity, pH) with preset and manual slider controls.
+  - `CropVisionService.java`: Multimodal Vision analysis engine with Gemini / Grok API support and clinical fallback logic.
+  - `AgronomicReasoningService.java`: Multimodal correlation calculus prescribing calibrated NPK ratios, commercial fertilizers, and organic treatments.
+- **Frontend**: **React 19, TypeScript, and Tailwind CSS** running on `http://localhost:5173`
+  - Interactive Leaf Diagnostic Studio with low-light optical boost (+22% brightness).
+  - Telemetry HUD with smooth Apple-style gauges and Java soil engine controls.
+  - 14-day agricultural care schedule and downloadable prescription reports.
+- **Hardware Decoupled**: Physical COM/serial and C++ firmware dependencies have been completely replaced with a pure software simulation engine. Legacy hardware sketches are preserved in `legacy_hardware_backup/`.
 
 ---
 
 ## 🚀 Quickstart
 
-`ash
-# Install dependencies
+### 1. Launch All Services (One-Click Windows)
+Double-click `run.bat` or execute in terminal:
+```bash
+.\run.bat
+```
+
+### 2. Manual Commands
+**Backend (Java 21):**
+```bash
+cd backend
+mvnw.cmd clean package -DskipTests
+java -jar target/agroveda-backend-1.0.0.jar
+```
+*Health check:* `http://localhost:8080/api/health`
+
+**Frontend (React 19):**
+```bash
 npm install
-
-# Start local dev server
 npm run dev
-
-# Build for production
-npm run build
-`
-
----
-
-## 📜 Changelog
-See [CHANGELOG.md](./CHANGELOG.md) for full version history, architectural decisions, and release notes.
+```
+*Live UI:* `http://localhost:5173/`

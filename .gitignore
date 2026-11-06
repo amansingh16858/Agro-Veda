@@ -7,3 +7,11 @@ dist-ssr
 apis.txt
 scratch_extracted_slides.txt
 .DS_Store
+
+# Java & Maven
+target/
+backend/target/
+*.class
+*.jar
+!backend/.mvn/wrapper/maven-wrapper.jar
+*.log
