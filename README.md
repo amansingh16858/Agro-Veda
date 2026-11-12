@@ -1,4 +1,4 @@
-# 🌾 AgroVeda AI — Smart Fertilizer & Crop Diagnostic System
+# 🌾 Agro Veda - AI Based fertilizer recommendation system
 ### *Modern Java 21 Backend + React 19 Precision Agronomy Engine*
 
 > **Precision Agriculture Dual-Engine**: Fusing agronomic soil telemetry with high-resolution computer vision to prescribe exact chemical (NPK) and organic fertilizer remedies.
