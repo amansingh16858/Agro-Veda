@@ -145,7 +145,7 @@ export const TelemetryHUD: React.FC<TelemetryHUDProps> = ({
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
                 <h3 className="text-[13px] font-bold text-slate-900 dark:text-neutral-100 tracking-tight leading-none whitespace-nowrap">
-                  Soil Moisture Sensor
+                  Soil Moisture
                 </h3>
                 <span className={`inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold ${
                   isProbeInAir 
@@ -169,11 +169,7 @@ export const TelemetryHUD: React.FC<TelemetryHUDProps> = ({
                 </span>
               </div>
               <p className="text-[10px] text-slate-400 dark:text-neutral-500 mt-0.5 truncate">
-                {isProbeConnected 
-                  ? isProbeInAir 
-                    ? `Sensor connected (${connectionSourceText}) · Push into soil to test`
-                    : `Streaming live soil data via ${connectionSourceText}` 
-                  : isSampleActive 
+                {isSampleActive 
                   ? `Pre-filled from field sample (${moisture}%)`
                   : 'Slide below to adjust moisture'}
               </p>

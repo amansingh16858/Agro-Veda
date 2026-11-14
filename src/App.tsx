@@ -277,7 +277,7 @@ export function App() {
 
       // STAGE 2: Guaranteed Perceptual Dwell Time for Real Soil Telemetry Fusion
       setCookingStage(2);
-      setLoadingStep(`Stage 2: Ingesting probe sensors — Correlating ${telemetry.moisturePercent}% soil moisture (${telemetry.moisturePercent < 30 ? 'Dry Stress' : 'Good Moisture'}) with leaf tissue...`);
+      setLoadingStep(`Stage 2: Processing soil data — Correlating ${telemetry.moisturePercent}% soil moisture (${telemetry.moisturePercent < 30 ? 'Dry Stress' : 'Good Moisture'}) with leaf tissue...`);
       addLog(`Fusing symptoms with Soil Moisture (${telemetry.moisturePercent}%) & Microclimate...`, 'Reasoning Engine', 'info');
 
       const stage2MinDwell = new Promise(resolve => setTimeout(resolve, 1100));
@@ -453,7 +453,7 @@ export function App() {
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0 animate-pulse" />
                 <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 dark:text-neutral-400">
-                  Input 2 · <span className="font-serif italic normal-case tracking-normal font-semibold text-slate-900 dark:text-neutral-200">Soil Moisture Sensor</span>
+                  Input 2 · <span className="font-serif italic normal-case tracking-normal font-semibold text-slate-900 dark:text-neutral-200">Soil Moisture</span>
                 </span>
               </div>
               <span className="text-[11px] font-mono text-slate-400 dark:text-neutral-500 font-medium">
@@ -534,7 +534,7 @@ export function App() {
             }`}>
               <span className={`w-2 h-2 rounded-full flex-shrink-0 ${currentImage ? 'bg-emerald-500 animate-pulse' : 'bg-slate-300 dark:bg-neutral-600'}`} />
               <div className="flex flex-col min-w-0">
-                <span className="text-[9.5px] sm:text-[10px] uppercase font-bold tracking-wider font-mono opacity-70 truncate">Leaf Sensor</span>
+                <span className="text-[9.5px] sm:text-[10px] uppercase font-bold tracking-wider font-mono opacity-70 truncate">Leaf Photo</span>
                 <span className="text-xs font-bold font-sans truncate">
                   {currentImage ? `${farmProfile.cropName.split(' ')[0]} (Ready ✓)` : 'No Leaf Photo'}
                 </span>
