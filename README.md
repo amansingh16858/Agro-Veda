@@ -7,7 +7,7 @@
 
 ## 🌟 Architecture: Pure Java 21 Backend + Modern React Frontend
 
-- **Backend**: **100% Java 21 (Spring Boot 3.3.5)** running on `http://localhost:8080`
+- **Backend**: **100% Java 21 (Spring Boot 3.3.5)**
   - `SoilSimulationService.java`: Realistic agronomic soil dynamics (moisture, temperature, humidity, pH) with preset and manual slider controls.
   - `CropVisionService.java`: Multimodal Vision analysis engine with Gemini / Grok API support and clinical fallback logic.
   - `AgronomicReasoningService.java`: Multimodal correlation calculus prescribing calibrated NPK ratios, commercial fertilizers, and organic treatments.
