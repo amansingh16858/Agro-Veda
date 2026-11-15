@@ -1,4 +1,4 @@
-﻿# 🌿 AGROPULSE AI — Product Research & Design Blueprint
+﻿# 🌿 AGROVEDA AI — Product Research & Design Blueprint
 ### *Next-Generation Multimodal Agronomic Diagnostic & Prescription Platform*
 
 ---
@@ -25,7 +25,7 @@ Modern agriculture suffers from a massive **diagnostic-to-action gap**:
 ## 2. Information Architecture (IA) & Product Hierarchy
 
 ```
-AGROPULSE PLATFORM
+AGROVEDA PLATFORM
 ├── 1. Diagnostic Studio (Primary Workbench)
 │   ├── Edge Device Live Stream / Hardware Ingestion Hub
 │   ├── Visual Leaf Viewport & Symptom Bounding Overlay
@@ -134,7 +134,7 @@ The interface blends the precision of modern developer tools (like Linear and Ra
 ## 5. Screen Layout & Component Blueprint
 
 ### 5.1 Hero & Navigation Header
-* **Left:** Brand Lockup (`AgroPulse AI` with live green pulsating edge-sync badge: `● ESP32 EDGE PROBE ONLINE`).
+* **Left:** Brand Lockup (`AgroVeda AI` with live green pulsating edge-sync badge: `● ESP32 EDGE PROBE ONLINE`).
 * **Center:** Quick Farm Profile Selector (e.g., `Field: North Plot #2 (Tomato)` with edit modal).
 * **Right:** 
   * Language Selector (`English`, `हिंदी`, `தமிழ்`, `తెలుగు`).
@@ -248,4 +248,4 @@ Phase 4: Polish, PDF Export & Presentation Prep (Days 11–12)
 ```
 
 ---
-*Created by AgroPulse AI Engineering & Product Design Team.*
+*Created by AgroVeda AI Engineering & Product Design Team.*

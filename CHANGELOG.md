@@ -1,4 +1,4 @@
-# 🌾 AgroPulse AI — Product Changelog & Architecture Evolution
+# 🌾 AgroVeda AI — Product Changelog & Architecture Evolution
 
 All notable changes, architectural pivots, UX refinements, and hardware integrations are documented in this file.
 

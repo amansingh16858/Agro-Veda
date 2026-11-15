@@ -29,7 +29,7 @@ export function App() {
     if (typeof window !== 'undefined') {
       const urlTheme = new URLSearchParams(window.location.search).get('theme');
       if (urlTheme === 'dark' || urlTheme === 'light') return urlTheme;
-      return (localStorage.getItem('agroveda_theme') as 'light' | 'dark') || (localStorage.getItem('agropulse_theme') as 'light' | 'dark') || 'light';
+      return (localStorage.getItem('agroveda_theme') as 'light' | 'dark') || 'light';
     }
     return 'light';
   });

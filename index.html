@@ -13,7 +13,7 @@
         try {
           var params = new URLSearchParams(window.location.search);
           var urlTheme = params.get('theme');
-          var saved = urlTheme || localStorage.getItem('agroveda_theme') || localStorage.getItem('agropulse_theme');
+          var saved = urlTheme || localStorage.getItem('agroveda_theme');
           if (saved === 'dark') {
             document.documentElement.classList.add('dark');
           } else if (saved === 'light') {
